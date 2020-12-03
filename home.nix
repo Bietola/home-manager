@@ -51,6 +51,38 @@
     alloy5
   ];
 
+  # Bash
+  programs.bash = {
+    enable = true;
+
+    shellAliases = {
+      # Hacks
+      sudo = "sudo ";
+
+      # Better defaults
+      ls = "ls --color=auto";
+      xclip = "xclip -selection clipboard";
+
+      # Utilities
+      cpp = "rsync -ah --progress";
+      cx = "chmod +x";
+      power = "acpi";
+      computer-info = "neofetch";
+      show-ip4 = "wget http://checkip.dyndns.org/ -O - -o /dev/null | cut -d: -f 2 | cut -d\< -f 1";
+
+      # Quick access to files
+      real="zathura ~/books/music/the-real-book.pdf";
+    };
+
+    bashrcExtra = ''
+      # Vim is the way
+      set -o vi
+
+      # Use <c-s> to go forward in reverse-i-search(es)
+      stty -ixon
+    '';
+  };
+
   # Git
   programs.git = {
     enable = true;
