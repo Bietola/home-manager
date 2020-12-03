@@ -224,6 +224,9 @@ function lncfge() {
 # qutebrowser
 # lncfge :c qutebrowser
 
+# alacritty
+# lncfge :c alacritty
+
 ##############################
 # Inactive for other reasons #
 ##############################
@@ -244,7 +247,8 @@ function lncfge() {
 #####################
 # Manual soft links #
 #####################
-# AKA: The only useful thing here
+# AKA: Things that can't be managed with home-manager, and are thus managed separately
+# AKA: The only useful section...
 
 # qutebrowser quickmarks
 lncfge :c qutebrowser/quickmarks

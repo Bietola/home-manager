@@ -51,6 +51,15 @@
     alloy5
   ];
 
+  # Alacritty
+  programs.alacritty = {
+    enable = true;
+
+    settings = {
+      font.size = 13;
+    };
+  };
+
   # Bash
   programs.bash = {
     enable = true;
