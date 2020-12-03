@@ -21,23 +21,31 @@
 
   # Packages
   home.packages = with pkgs; [
-    # Basic terminal utils
+    # Basic utils
     wget
     git
-
-    # Basic graphical utils
-    alacritty
     dmenu
+
+    # Terminal
+    alacritty
 
     # Browsers
     firefox
     qutebrowser
+    transmission-gtk
 
-    # Xorg configuration
-    xorg.xmodmap
+    # Media
+    ranger
+    vlc
+
+    # Programming utils
+    boxes
 
     # Programming
     nodejs # mainly for coc vim plugin
+
+    # Xorg configuration
+    xorg.xmodmap
 
     # Poli
     alloy5
@@ -61,6 +69,16 @@
       sc = "stash clear";
       su = "stash --include-untracked";
       p = "push";
+    };
+
+    extraConfig = {
+      core.editor = "nvim";
+      credential.helper = "store --file ~/.git-credentials";
+      pull.rebase = "false";
+
+      # Submodules
+      diff.submodule = "log";
+      status.submodulesummary = 1;
     };
   };
 
@@ -110,6 +128,27 @@
       # Poli.
       # TODO: Make custom: vim-alloy
     ];
-    extraConfig = builtins.readFile ./nvim/init.vim;
+    extraConfig = builtins.readFile ./dotfiles/nvim/init.vim;
+  };
+
+  # XMonad
+  xsession.windowManager.xmonad = {
+    enable = true;
+
+    enableContribAndExtras = true;
+    extraPackages = hpkgs: [
+      hpkgs.xmonad
+      hpkgs.xmonad-contrib
+      hpkgs.xmonad-extras
+    ];
+
+    config = ./dotfiles/xmonad/xmonad.hs;
+  };
+
+  # Qutebrowser
+  programs.qutebrowser = {
+    enable = true;
+
+    extraConfig = builtins.readFile ./dotfiles/qutebrowser/config.py;
   };
 }
