@@ -255,3 +255,7 @@ lncfge :c qutebrowser/quickmarks
 
 # ranger
 lncfge :c ranger
+
+# stack
+# NB. only needed for nixos
+lncfge :h ".stack/config.yaml"

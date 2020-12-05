@@ -25,6 +25,8 @@
     wget
     git
     dmenu
+    xclip
+    zip
 
     # Terminal
     alacritty
@@ -38,10 +40,18 @@
     ranger
     vlc
 
+    # System management
+    # syncthing # TODO: Set this up properly...
+    pass
+
     # Programming utils
+    # neovim # TODO: Find out why this fails...
+    # emacs # TODO: Setup doom emacs
     boxes
+    haskellPackages.haskell-language-server
 
     # Programming
+    stack
     nodejs # mainly for coc vim plugin
 
     # Xorg configuration
@@ -84,6 +94,12 @@
     };
 
     bashrcExtra = ''
+      # Environmental variables
+      export EDITOR=nvim
+      export TERMINAL=alacritty
+      export BROWSER=qutebrowser
+      export MYVIMRC=~/.config/nixpkgs/dotfiles/nvim/init.vim
+
       # Vim is the way
       set -o vi
 
