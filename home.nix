@@ -27,6 +27,9 @@
     dmenu
     xclip
     zip
+    scrot
+    xorg.xev
+    acpi
 
     # Terminal
     alacritty
@@ -37,8 +40,13 @@
     transmission-gtk
 
     # Media
+    mplayer
     ranger
     vlc
+
+    # Looks
+    redshift
+    feh
 
     # System management
     # syncthing # TODO: Set this up properly...
@@ -48,6 +56,7 @@
     # neovim # TODO: Find out why this fails...
     # emacs # TODO: Setup doom emacs
     boxes
+    haskellPackages.hindent
     haskellPackages.haskell-language-server
 
     # Programming
@@ -57,18 +66,36 @@
     # Xorg configuration
     xorg.xmodmap
 
+    # Games
+    minecraft-server
+    logmein-hamachi
+
     # Poli
     alloy5
   ];
 
-  # Alacritty
-  programs.alacritty = {
-    enable = true;
+  ############
+  # XSession #
+  ############
 
-    settings = {
-      font.size = 13;
-    };
+  # Xsession/Xprofile
+  xsession = {
+    # TODO: Fix this overriding custom keyboard layout in nixos config
+    enable = false;
+
+    # Things that would go into ´~/.xprofile´
+    initExtra = ''
+      # Blue light is evil
+      redshift -O 3000
+
+      # Nature is relaxing
+      feh --bg-scale ~/img/wp/forest.jpg
+    '';
   };
+
+  ############
+  # Programs #
+  ############
 
   # Bash
   programs.bash = {
@@ -106,6 +133,15 @@
       # Use <c-s> to go forward in reverse-i-search(es)
       stty -ixon
     '';
+  };
+
+  # Alacritty
+  programs.alacritty = {
+    enable = true;
+
+    settings = {
+      font.size = 11;
+    };
   };
 
   # Git
@@ -161,19 +197,20 @@
       sideways-vim
       ctrlp-vim
 
-      # Cosmetic.
+      # Cosmetic
       # TODO: Fix characters: vim-airline
       # vim-airline-themes
 
-      # Programming.
+      # Snippets
+      ultisnips
+
+      # Programming
       vim-slime
       coc-nvim
-      # Nix.
+      # Nix
       vim-nix
-      # Rust.
+      # Rust
       # TODO: Make Custom: ron-vim
-      # Haskell.
-      vim-hindent
       # Lisp dialects.
       vim-sexp
       vim-sexp-mappings-for-regular-people

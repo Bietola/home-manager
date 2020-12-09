@@ -100,3 +100,16 @@ haskell-stack-nix-integration https://docs.haskellstack.org/en/stable/nix_integr
 aoc-current https://adventofcode.com/2020/day/1
 hastebin https://hastebin.com/niwatipexa.properties
 discord https://discord.com/channels/@me
+gawk-user-guide https://www.gnu.org/software/gawk/manual/gawk.html
+haskell-stack-manual https://docs.haskellstack.org/en/stable/README/
+haskell-turtle-docs https://hackage.haskell.org/package/turtle-1.5.21
+aoc20 https://adventofcode.com/2020
+haskell-fmt-docs https://hackage.haskell.org/package/fmt-0.6.1.2/docs/Fmt.html
+deep-voice-conversion https://github.com/andabi/deep-voice-conversion
+deep-voice-cloning-rep https://github.com/CorentinJ/Real-Time-Voice-Cloning
+pypi https://pypi.org/
+python-pkg-search https://pypi.org/
+aur-pkg-search https://aur.archlinux.org/
+github-issues https://github.com/issues
+pretty-code https://hastebin.com/niwatipexa.properties
+nixpkgs-rep https://github.com/NixOS/nixpkgs
